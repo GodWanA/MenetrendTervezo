@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="MenetrendTervezo.IdopontMeneger"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MenetrendTervezo" xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="200" HorizontalAlignment="Stretch" Loaded="UserControl_Loaded">
+    <Border BorderThickness="1" Background="#FF7C7C7C" BorderBrush="#FF4D4D4D" CornerRadius="2" Margin="2" >
+        <Grid>
+            <cefSharp:ChromiumWebBrowser x:Name="browser" Opacity="0" IsEnabled="False" Panel.ZIndex="-1" FrameLoadEnd="browser_FrameLoadEnd"/>
+            <StackPanel Margin="5">
+                <TextBlock Text="Időpont:" Margin="0,0,0,2"/>
+                <ComboBox x:Name="combobox_timespan" Margin="0,0,0,2" IsEditable="True" VerticalContentAlignment="Center" SelectedIndex="0" TextBoxBase.TextChanged="combobox_timespan_TextChanged">
+                    <ComboBoxItem Content="08:00"/>
+                    <ComboBoxItem Content="08:30"/>
+                    <ComboBoxItem Content="09:00"/>
+                    <ComboBoxItem Content="09:30"/>
+                    <ComboBoxItem Content="10:00"/>
+                    <ComboBoxItem Content="10:30"/>
+                    <ComboBoxItem Content="11:00"/>
+                    <ComboBoxItem Content="11:30"/>
+                    <ComboBoxItem Content="12:00"/>
+                    <ComboBoxItem Content="12:30"/>
+                    <ComboBoxItem Content="12:30"/>
+                    <ComboBoxItem Content="13:00"/>
+                    <ComboBoxItem Content="13:30"/>
+                    <ComboBoxItem Content="14:00"/>
+                    <ComboBoxItem Content="14:30"/>
+                    <ComboBoxItem Content="15:00"/>
+                    <ComboBoxItem Content="15:30"/>
+                    <ComboBoxItem Content="14:00"/>
+                    <ComboBoxItem Content="14:30"/>
+                    <ComboBoxItem Content="15:00"/>
+                    <ComboBoxItem Content="15:30"/>
+                    <ComboBoxItem Content="16:00"/>
+                    <ComboBoxItem Content="16:30"/>
+                    <ComboBoxItem Content="17:00"/>
+                    <ComboBoxItem Content="17:30"/>
+                    <ComboBoxItem Content="18:00"/>
+                    <ComboBoxItem Content="18:30"/>
+                    <ComboBoxItem Content="19:00"/>
+                    <ComboBoxItem Content="19:30"/>
+                    <ComboBoxItem Content="20:00"/>
+                    <ComboBoxItem Content="20:30"/>
+                    <ComboBoxItem Content="21:00"/>
+                    <ComboBoxItem Content="21:30"/>
+                    <ComboBoxItem Content="22:00"/>
+                    <ComboBoxItem Content="22:30"/>
+                </ComboBox>
+                <TextBlock Text="Bolt URL:" Margin="0,0,0,2"/>
+                <TextBox x:Name="textbox_url" Margin="0,0,0,2" TextChanged="textbox_url_TextChanged"/>
+                <TextBlock Text="Stream címe:" Margin="0,0,0,2"/>
+                <TextBox x:Name="textbox_cim" Margin="0,0,0,2"/>
+                <TextBlock Text="Stream képe:" Margin="0,0,0,2"/>
+                <Grid  Margin="0,0,0,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ComboBox x:Name="combobox_kepek" Grid.Column="0" IsEditable="True" TextBoxBase.TextChanged="combobox_kepek_TextChanged"/>
+                    <Button x:Name="button_kep" Content="Tallóz" Padding="15,0" Grid.Column="1" Margin="2,0,0,0" IsEnabled="False"/>
+                </Grid>
+                <ComboBox x:Name="combobox_kepmod" Margin="0,0,0,2" SelectedIndex="0" SelectionChanged="combobox_kepmod_SelectionChanged">
+                    <ComboBoxItem Content="Contain"/>
+                    <ComboBoxItem Content="Cover"/>
+                </ComboBox>
+                <Border Margin="0,0,0,2" Height="150" Background="#FF464646" BorderBrush="#FF252525" BorderThickness="1">
+                    <Image x:Name="image_preview" MaxHeight="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <TextBlock x:Name="textblock_id" Margin="0,0,0,2"/>
+                <Button x:Name="button_torles" Content="Törlés" Margin="0,0,0,2" Click="button_torles_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
